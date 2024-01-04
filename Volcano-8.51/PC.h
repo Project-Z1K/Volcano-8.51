@@ -88,13 +88,6 @@ void ServerReadyToStartMatchHook(AFortPlayerController* PC)
 		PlayerState->OnRep_PlayerTeamPrivate();
 		PlayerState->OnRep_TeamIndex(0);
 		PlayerState->OnRep_SquadId();
-
-		FGameMemberInfo test{ -1,-1,-1 };
-		test.TeamIndex = PlayerState->TeamIndex;
-		test.SquadId = PlayerState->SquadId;
-		test.MemberUniqueId = PlayerState->UniqueId;
-
-		GetGameState()->GameMemberInfoArray.Members.Add(test);
 		GetGameState()->GameMemberInfoArray.MarkArrayDirty();
 
 		static bool bTest = false;
